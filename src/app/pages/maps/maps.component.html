@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card ">
+            <header>
+                <div class="title">Map Viewer - Openlayers & Angular</div>
+            </header>
+            <main>
+                <div class="left-bar"></div>
+                <div class="map-container">
+                    <app-map [map]="map"></app-map>
+                </div>
+            </main>
+            <footer>
+                <app-scaleline [map]="map"></app-scaleline>
+                <app-mouse-position [map]="map" positionTemplate="{x}, {y} m"></app-mouse-position>
+            </footer>
+        </div>
+    </div>
+</div>
