@@ -15,7 +15,7 @@ export class ApiService {
     return this.http.get<Array<string>>(`${URL}get-stations`).toPromise()
   }
 
-  getAllStationDetails(): Promise<Array<StationDetail>>{
-    return this.http.get<Array<StationDetail>>(`${URL}get-station-details`).toPromise()
+  getAllStationDetails(): Promise<StationDetail[]>{
+    return this.http.get<StationDetail[]>(`${URL}get-station-details`).toPromise()
   }
 }
