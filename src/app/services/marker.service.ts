@@ -1,3 +1,4 @@
+import { RecordDetail } from './../shared/record-detail';
 import { ApiService } from './api.service';
 import { PopupService } from './popup.service';
 import { StationDetail } from '../shared/station-detail';
@@ -48,15 +49,22 @@ export class MarkerService {
         const lon = this.stations[i].longitude;
         const lat = this.stations[i].latitude;
 
+        var cacheData!: RecordDetail;
+
+        await this.as.getNewestRecord(this.stations[i].id)
+          .then(response => cacheData = response)
+          .catch(error => this.error = error);
+
+
         var marker: any;
-        if (this.stations[i].availableVehicles == 0) {
+        if (cacheData.value == 0) {
           marker = L.marker([lat, lon], {icon: redIcon});
         } else {
           marker = L.marker([lat, lon], {icon: blueIcon});
         }
 
 
-        marker.bindPopup(this.pus.makeStationPopup(this.stations[i]));
+        marker.bindPopup(this.pus.makeStationPopup(this.stations[i], cacheData.value, cacheData.timestamp));
 
         marker.addTo(map);
       }

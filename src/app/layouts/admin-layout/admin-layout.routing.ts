@@ -11,3 +11,9 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'map',           component: MapComponent },
     { path: 'analytics',      component: AnalyticsComponent},
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(AdminLayoutRoutes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

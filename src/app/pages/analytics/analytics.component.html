@@ -1,1 +1,107 @@
-<p>analytics works!</p>
+<div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-body ">
+                <div class="row">
+                    <div class="col-3 col-sm-3">
+                        <div class="icon-big text-center">
+                            <i class="nc-icon nc-pin-3 text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="col-9 col-sm-9">
+                        <div class="input justify-content-center">
+                            <select [(ngModel)]="stationSelect" class="custom-select" id="inputStation">
+                                <option selected value="all">Alle Stationen</option>
+                                <option *ngFor="let st of stations" value="{{st.id}}">{{st.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-body ">
+                <div class="row">
+                    <div class="col-3 col-sm-3">
+                        <div class="icon-big text-center">
+                            <i class="nc-icon nc-watch-time text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="col-9 col-sm-9">
+                        <div *ngIf="stationSelect == 'all'" class="input justify-content-center">
+                            <select [(ngModel)]="timeSelect" class="custom-select" id="inputTimeFormat">
+                                <option *ngFor="let tas of timeAllStation" value="{{tas.value}}">{{tas.name}}</option>
+                            </select>
+                        </div>
+                        <div *ngIf="stationSelect != 'all'" class="input justify-content-center">
+                            <select [(ngModel)]="timeSelect" class="custom-select" id="inputTimeFormat">
+                              <option *ngFor="let tas of timeSingleStaion" value="{{tas.value}}">{{tas.name}}</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-6">
+        <button type="button" class="btn btn-outline-primary btn-block" (click)="onClick(stationSelect, timeSelect)">
+          <div class="logo-image-small">
+            <img class="search-icon" src="assets/img/baseline_search_black_48dp.png">
+        </div>
+        </button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-title">Availability</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="speedChart" width="400" height="100"></canvas>
+                <div *ngIf="loading == true" class="d-flex justify-content-center">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="chart-legend">
+                    <i class="fa fa-circle text-info"></i> Availability sorted by: {{ sorting(stationSelect) }}
+                </div>
+                <hr/>
+                <div class="card-stats">
+                    <i class="fa fa-check"></i> Data information from: {{currentTime}} Last Record: {{ lastRecord }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card ">
+            <div class="card-header ">
+                <h5 class="card-title">Current Station Statistics</h5>
+            </div>
+            <div class="card-body ">
+                <canvas id="chartStatistic"></canvas>
+                <div *ngIf="loading == true" class="d-flex justify-content-center">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer ">
+                <div class="legend">
+                    <i class="fa fa-circle text-primary"></i> Available
+                    <i class="fa fa-circle text-danger"></i> Unavailable
+                </div>
+                <hr>
+                <div class="stats">
+                    <i class="fa fa-calendar"></i> Maximum Available {{ maxAvailable }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

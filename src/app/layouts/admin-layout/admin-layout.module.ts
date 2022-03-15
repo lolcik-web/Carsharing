@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { ApiService } from './../../services/api.service';
 import { MarkerService } from './../../services/marker.service';
 import { NgModule } from '@angular/core';

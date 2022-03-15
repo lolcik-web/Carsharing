@@ -3,7 +3,7 @@ import { AccessInfo } from './access-info';
 
 export class StationDetail {
   constructor(
-    public id: number,
+    public id: string,
     public name: string,
     public latitude: number,
     public longitude: number,

@@ -26,30 +26,14 @@ export class DashboardComponent implements OnInit{
         type: 'line',
 
         data: {
-          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+          labels: ["Januar 2010", "Juli 2010", "Januar 2011", "Juli 2011", "Januar 2012", "Juli 2012", "Januar 2013", "Juli 2013", "Januar 2014", "Juli 2014", "Januar 2015", "Juli 2015", "Januar 2016", "Juli 2016", "Januar 2017", "Juli 2017", "Januar 2018", "Juli 2018", "Januar 2019", "Juli 2019", "Januar 2020", "Juli 2020", "Januar 2021", "Juli 2021"],
           datasets: [{
-              borderColor: "#6bd098",
-              backgroundColor: "#6bd098",
+              borderColor: "#4acccd",
+              backgroundColor: "#4acccd",
               pointRadius: 0,
               pointHoverRadius: 0,
               borderWidth: 3,
-              data: [300, 310, 316, 322, 330, 326, 333, 345, 338, 354]
-            },
-            {
-              borderColor: "#f17e5d",
-              backgroundColor: "#f17e5d",
-              pointRadius: 0,
-              pointHoverRadius: 0,
-              borderWidth: 3,
-              data: [320, 340, 365, 360, 370, 385, 390, 384, 408, 420]
-            },
-            {
-              borderColor: "#fcc468",
-              backgroundColor: "#fcc468",
-              pointRadius: 0,
-              pointHoverRadius: 0,
-              borderWidth: 3,
-              data: [370, 394, 415, 409, 425, 445, 460, 450, 478, 484]
+              data: [0, 0, 0, 0, 0, 0, 0, 0, 304, 961, 1100, 1300, 1440, 1680, 1820, 1990, 2100, 2120, 2080, 2150, 2210, 1800, 1950, 2010, 2070]
             }
           ]
         },

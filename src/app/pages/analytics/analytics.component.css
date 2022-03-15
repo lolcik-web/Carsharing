@@ -1,0 +1,26 @@
+.reloadButton {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.card-body {
+    padding-top: 10px;
+}
+
+select {
+    margin-top: 12px;
+}
+
+.btn.btn-outline-primary.btn-block {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.search-icon {
+    height: 70px;
+    width: 70px;
+}
