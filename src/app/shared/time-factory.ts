@@ -32,6 +32,7 @@ export class TimeFactory {
       { "name": '12 hours', "value": '43200'},
       { "name": '24 hours', "value": '86400'},
       { "name": '2 days', "value": '172800'},
+      { "name": '3 days', "value": '259200'},
     ]
     return ret;
   }

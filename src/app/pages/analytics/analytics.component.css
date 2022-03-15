@@ -24,3 +24,17 @@ select {
     height: 70px;
     width: 70px;
 }
+
+button {
+    border-color: #4acccd;
+    box-shadow: 0 0 10px lightgray;
+    border-radius: 10px;
+    height: 82px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.col-lg-4.col-md-6.col-sm-6.abc {
+    height: 98px;
+    margin-bottom: 0px;
+}

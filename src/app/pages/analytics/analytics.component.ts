@@ -102,6 +102,8 @@ export class AnalyticsComponent implements OnInit {
 
   makeStatisticPie(maxValue: number) {
     this.canvas = document.getElementById("chartStatistic");
+    this.canvas = null;
+    this.canvas = document.getElementById("chartStatistic");
     this.ctx = this.canvas.getContext("2d");
     this.chartStatistic = new Chart(this.ctx, {
         type: 'pie',
@@ -168,6 +170,12 @@ export class AnalyticsComponent implements OnInit {
 
   makeAvailability() {
     var speedCanvas = document.getElementById("speedChart");
+    var lineChart = new Chart(speedCanvas, {
+      type: null,
+      hover: false,
+      data: null,
+      options: null
+    });
 
     var dataFirst = {
       data: this.chartData.map(a => a.value),

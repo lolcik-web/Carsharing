@@ -45,8 +45,8 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-sm-6">
-        <button type="button" class="btn btn-outline-primary btn-block" (click)="onClick(stationSelect, timeSelect)">
+    <div class="col-lg-4 col-md-6 col-sm-6 abc">
+        <button type="button" class="btn btn-primary btn-block" (click)="onClick(stationSelect, timeSelect)">
           <div class="logo-image-small">
             <img class="search-icon" src="assets/img/baseline_search_black_48dp.png">
         </div>
@@ -73,7 +73,7 @@
                 </div>
                 <hr/>
                 <div class="card-stats">
-                    <i class="fa fa-check"></i> Data information from: {{currentTime}} Last Record: {{ lastRecord }}
+                    <i class="fa fa-check-circle"></i> Data information from: {{currentTime}} Last Record: {{ lastRecord }}
                 </div>
             </div>
         </div>
@@ -99,7 +99,7 @@
                 </div>
                 <hr>
                 <div class="stats">
-                    <i class="fa fa-calendar"></i> Maximum Available {{ maxAvailable }}
+                    <i class="fa fa-bar-chart "></i> Maximum Available {{ maxAvailable }}
                 </div>
             </div>
         </div>
